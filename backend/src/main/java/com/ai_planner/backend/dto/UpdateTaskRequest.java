@@ -7,11 +7,9 @@ import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 public record UpdateTaskRequest(
-        @NotBlank Long id,
-        @NotBlank User user,
-        Task.Status status,
         String whatToDo,
         LocalDate dueDate,
         Task.Priority priority,
-        Task.Category category
+        Task.Category category,
+        Task.Status status
 ) {}
