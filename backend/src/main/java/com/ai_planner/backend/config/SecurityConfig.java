@@ -21,6 +21,7 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // no sessions
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**").permitAll()  // public
+                        .requestMatchers("/api/**").permitAll()
                         .anyRequest().authenticated()             // everything else needs auth
                 );
         return http.build();
